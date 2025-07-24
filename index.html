@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Cloud HTTPS Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .status {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .info strong {
+            color: #007bff;
+        }
+        .timestamp {
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Cloud HTTPS Server</h1>
+        <div class="status">
+            ✅ Server is successfully running on port 19293
+        </div>
+        
+        <div class="info">
+            <p><strong>🌐 URL:</strong> <span id="current-url"></span></p>
+            <p><strong>🔒 Protocol:</strong> HTTPS (Secure)</p>
+            <p><strong>📡 Port:</strong> 19293</p>
+            <p><strong>🏠 Environment:</strong> <span id="environment">Cloud</span></p>
+            <p><strong>⏰ Server Time:</strong> <span id="server-time"></span></p>
+        </div>
+        
+        <div class="timestamp">
+            <p>🕒 Page loaded at: <span id="load-time"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Display current URL
+        document.getElementById('current-url').textContent = window.location.href;
+        
+        // Display server time
+        const now = new Date();
+        document.getElementById('server-time').textContent = now.toLocaleString();
+        document.getElementById('load-time').textContent = now.toLocaleString();
+        
+        // Detect environment
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            document.getElementById('environment').textContent = 'Local Development';
+        }
+    </script>
+</body>
+</html> 
