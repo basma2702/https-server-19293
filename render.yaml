@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: basma-server-19293
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_server.py
+    envVars:
+      - key: PORT
+        value: 19293 
